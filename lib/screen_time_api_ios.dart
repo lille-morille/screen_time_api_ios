@@ -16,4 +16,10 @@ class ScreenTimeApiIos {
     final instance = ScreenTimeApiIosPlatform.instance as MethodChannelScreenTimeApiIos;
     await instance.encourageAll();
   }
+
+  Future discourageAll() async {
+    final instance =
+        ScreenTimeApiIosPlatform.instance as MethodChannelScreenTimeApiIos;
+    await instance.discourageAll();
+  }
 }

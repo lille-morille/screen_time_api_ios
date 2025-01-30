@@ -22,4 +22,8 @@ class MethodChannelScreenTimeApiIos extends ScreenTimeApiIosPlatform {
   Future encourageAll() async {
     await methodChannel.invokeMethod('encourageAll');
   }
+
+  Future discourageAll() async {
+    await methodChannel.invokeMethod('discourageAll');
+  }
 }

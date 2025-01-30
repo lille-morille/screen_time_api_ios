@@ -24,6 +24,13 @@ public class ScreenTimeApiIosPlugin: NSObject, FlutterPlugin {
             FamilyControlModel.shared.encourageAll();
             FamilyControlModel.shared.saveSelection(selection: FamilyActivitySelection())
             result(nil)
+        case "discourageAll":
+            Task {
+                try await FamilyControlModel.shared.authorize()
+                FamilyControlModel.shared.discourageAll()
+                FamilyControlModel.shared.saveSelection(selection: FamilyActivitySelection())
+            }
+            result(nil)
         default:
             result(FlutterMethodNotImplemented)
         }

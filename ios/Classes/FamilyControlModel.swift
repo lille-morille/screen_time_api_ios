@@ -66,6 +66,14 @@ class FamilyControlModel: ObservableObject {
             )
     }
 
+    func discourageAll() {
+        store.shield.applications = nil
+        store.shield.applicationCategories = ShieldSettings
+            .ActivityCategoryPolicy.all()
+        store.shield.webDomainCategories = ShieldSettings
+            .ActivityCategoryPolicy.all()
+    }
+
     func saveSelection(selection: FamilyActivitySelection) {
         let defaults = UserDefaults.standard
         defaults.set(
